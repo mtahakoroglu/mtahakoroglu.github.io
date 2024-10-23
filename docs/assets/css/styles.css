@@ -1,0 +1,9 @@
+body {
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* Light text color for better contrast */
+    font-family: Arial, sans-serif; /* Default font for body */
+}
+
+h1, h2, ul {
+    font-family: Verdana, Geneva, sans-serif; /* Different font for h1, h2, and ul */
+}
