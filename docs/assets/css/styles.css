@@ -7,3 +7,17 @@ body {
 h1, h2, ul {
     font-family: Verdana, Geneva, sans-serif; /* Different font for h1, h2, and ul */
 }
+
+.content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.content img {
+    margin-right: 20px;
+}
+
+.content p {
+    flex: 1;
+}
