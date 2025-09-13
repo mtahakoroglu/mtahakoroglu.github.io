@@ -83,3 +83,10 @@ h1, h2 {
         width: 100%;
     }
 }
+
+.note {
+    font-size: 1.3rem; /* larger than default paragraph */
+    margin-bottom: 20px;
+    color: #dddddd; /* lighter gray for contrast on dark theme */
+    font-style: italic; /* optional */
+}
