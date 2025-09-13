@@ -1,84 +1,85 @@
-/* ===== Base Page Styling (Full Dark Theme) ===== */
+/* ===== Base dark theme ===== */
 body {
-    background-color: #121212; /* Dark background */
-    color: #e0e0e0; /* Softer white text (less eye strain than pure #fff) */
+    background-color: #121212;
+    color: #ffffff;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     text-align: center;
 }
 
-/* Headings and lists */
-h1, h2, ul {
+h1, h2 {
     font-family: Verdana, Geneva, sans-serif;
-    color: #ffffff; /* Ensure headings stand out */
+    color: #ffffff;
 }
 
-h1 {
-    margin: 2rem 0;
-    font-size: 2.5rem;
-}
-
-/* ===== Existing Content Layout (if used elsewhere) ===== */
-.content {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.content img {
-    margin-right: 20px;
-}
-
-.content p {
-    flex: 1;
-    color: #cccccc; /* Light gray for readability */
-}
-
-/* ===== Project Grid Layout ===== */
-.projects {
+/* ===== Grid layout ===== */
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    align-items: start;
 }
 
-/* Card Styling */
-.card {
-    background: #1e1e1e; /* Dark card background */
+/* Large card spans two rows */
+.grid-container .project:first-child {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+}
+
+/* ===== Project card ===== */
+.project {
+    background-color: #1e1e1e;
+    padding: 15px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-/* Hover Effect */
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.9);
+.project:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.15);
 }
 
-/* Images inside cards */
-.card img {
-    width: 100%;
+.project img {
+    max-width: 100%;
     height: auto;
-    display: block;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-/* Titles below images */
-.card-title {
-    padding: 1rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    background: #2a2a2a; /* Slightly lighter than card */
-    color: #ffffff; /* White text */
+/* ===== Home button ===== */
+.home-link {
+    text-align: center;
+    margin-top: 40px;
 }
 
-/* Make entire card clickable */
-a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
+.home-icon {
+    width: 40px;
+    height: 40px;
+    filter: invert(100%);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.home-icon:hover {
+    transform: scale(1.1);
+}
+
+/* ===== Responsive styles ===== */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* single column */
+        grid-template-rows: auto;
+    }
+
+    .grid-container .project:first-child {
+        grid-row: auto;
+        grid-column: auto; /* remove spanning */
+    }
+
+    .project {
+        width: 100%;
+    }
 }
