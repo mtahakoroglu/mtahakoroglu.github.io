@@ -1,13 +1,25 @@
+/* ===== Base Page Styling (Full Dark Theme) ===== */
 body {
-    background-color: #121212; /* Dark background color */
-    color: #ffffff; /* Light text color for better contrast */
-    font-family: Arial, sans-serif; /* Default font for body */
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Softer white text (less eye strain than pure #fff) */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
+/* Headings and lists */
 h1, h2, ul {
-    font-family: Verdana, Geneva, sans-serif; /* Different font for h1, h2, and ul */
+    font-family: Verdana, Geneva, sans-serif;
+    color: #ffffff; /* Ensure headings stand out */
 }
 
+h1 {
+    margin: 2rem 0;
+    font-size: 2.5rem;
+}
+
+/* ===== Existing Content Layout (if used elsewhere) ===== */
 .content {
     display: flex;
     align-items: center;
@@ -20,4 +32,53 @@ h1, h2, ul {
 
 .content p {
     flex: 1;
+    color: #cccccc; /* Light gray for readability */
+}
+
+/* ===== Project Grid Layout ===== */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Card Styling */
+.card {
+    background: #1e1e1e; /* Dark card background */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.9);
+}
+
+/* Images inside cards */
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Titles below images */
+.card-title {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #2a2a2a; /* Slightly lighter than card */
+    color: #ffffff; /* White text */
+}
+
+/* Make entire card clickable */
+a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
